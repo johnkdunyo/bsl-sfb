@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.bleuLearnMore {
+    @apply  bg-[url("https://res.cloudinary.com/diek2uivi/image/upload/v1689356010/bsl-website/bsl/about/aboutbackground2_lpgzvu.jpg")] sm:bg-[center_bottom_-9rem] sm:bg-cover    bg-cover bg-[center_bottom_-1rem] ;
+    /* background-size: cover; */
+    /* background-position: bottom */
+    /* object-position: 100% 50%; */
+}
+
+
+
