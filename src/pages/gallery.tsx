@@ -67,7 +67,7 @@ const Gallery = () => {
   };
 
   return (
-    <SiteLayout pageName={"Galley"}>
+    <SiteLayout pageName={"Spectrum Fibre"}>
       <section className="bg-white text-[#1D365A] border py-36">
         <div className="relative">
           <Swiper

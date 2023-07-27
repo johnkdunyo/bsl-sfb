@@ -1,26 +1,25 @@
-import HappyClients from "@/components/homePage/HappyClients";
-import TrustedBy from "@/components/homePage/TrustedBy";
-import OurCultureSection from "@/components/homePage/OurCultureSection";
-import CertifiedSection from "@/components/homePage/CertifiedSection";
-import HeroSection from "@/components/homePage/HeroSection";
 import SiteLayout from "@/components/Layout/SiteLayout";
-import MissionVission from "@/components/homePage/MissionVission2";
-import YouCanCountOnUs from "@/components/homePage/YouCanCountOnUs";
-import MissionVissionMobile from "@/components/homePage/MissionVissionMobile";
+import AreaOfExpertiseSection from "@/components/spectrumFibrePage/AreaOfExpertiseSection";
+import HeroSection from "@/components/spectrumFibrePage/HeroSection";
+import OurRolloutSection from "@/components/spectrumFibrePage/OurRolloutSection";
+import PartnerShipSection from "@/components/spectrumFibrePage/PartnerShipSection";
+import RollingTextSection from "@/components/spectrumFibrePage/RollingTextSection";
+import WeInnovateSection from "@/components/spectrumFibrePage/WeInnovateSection";
+import React from "react";
 
-export default function Home() {
+const Spectrumfibre = () => {
   return (
-    <SiteLayout pageName={"BSL Home"}>
+    <SiteLayout pageName={"Spectrum Fibre"}>
       <>
         <HeroSection />
-        <YouCanCountOnUs />
-        <MissionVission />
-        <MissionVissionMobile />
-        <CertifiedSection />
-        <OurCultureSection />
-        <TrustedBy />
-        <HappyClients />
+        <RollingTextSection />
+        <OurRolloutSection />
+        <PartnerShipSection />
+        <WeInnovateSection />
+        <AreaOfExpertiseSection />
       </>
     </SiteLayout>
   );
-}
+};
+
+export default Spectrumfibre;
