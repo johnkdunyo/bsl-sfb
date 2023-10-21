@@ -9,6 +9,7 @@ import {
   HiChevronRight,
   HiChevronUp,
 } from "react-icons/hi";
+import { IPageName } from "@/types/indext";
 
 interface INavs {
   id: number;
@@ -52,19 +53,17 @@ const WebSubsidiaryNavs: ISubsidiaryNavs[] = [
     imgSRC: "/assets/icons/bdp-main.svg",
     imgSRC2: "/assets/icons/bdp.svg",
   },
+  {
+    id: 5,
+    title: "AgroSpectrum",
+    href: process.env.NEXT_PUBLIC_AGRO_URL!,
+    imgSRC: "/assets/icons/agro-main.png",
+    imgSRC2: "/assets/icons/agro-main.png",
+  },
 ];
 
 interface INavbar {
-  pageName:
-    | "BSL Home"
-    | "Spectrum Fibre"
-    | "Infra Services"
-    | "Digital Payment"
-    | "Business"
-    | "About"
-    | "Career"
-    | "Enquiry"
-    | "Galley";
+  pageName: IPageName;
 }
 
 interface INavbarNavButtons {
@@ -118,14 +117,14 @@ const CustomNavButton2 = ({
         active
           ? "border-[#AB2346] border-b-[4px]"
           : "border-b-[4px] border-transparent"
-      } `}
+      } text-base`}
     >
       {href ? (
         <Link href={href}>
           <h1
             className={`${
               textColorWhite ? "text-white" : "text-primary"
-            } font-medium text-md whitespace-nowrap `}
+            } font-medium  whitespace-nowrap hover:text-secondary`}
           >
             {title}
           </h1>
@@ -134,7 +133,7 @@ const CustomNavButton2 = ({
         <h1
           className={`${
             textColorWhite ? "text-white" : "text-primary"
-          } font-medium text-md whitespace-nowrap `}
+          } font-medium  whitespace-nowrap `}
         >
           {title}
         </h1>
@@ -178,7 +177,7 @@ const CustomNavList = ({ title, href }: { title: string; href: string }) => {
             <Link href="/">
               <h1 className="hover:font-medium">Publications</h1>
             </Link>
-            <Link href="/gallery">
+            <Link href="/">
               <h1 className="hover:font-medium">Gallery</h1>
             </Link>
           </div>
@@ -187,8 +186,6 @@ const CustomNavList = ({ title, href }: { title: string; href: string }) => {
     </div>
   );
 };
-
-const staggerMenuItems = stagger(0.1, { startDelay: 0.15 });
 
 const Navbar = ({ pageName }: INavbar) => {
   const mobileMenuRef = useRef<HTMLDivElement>(null);
@@ -215,6 +212,8 @@ const Navbar = ({ pageName }: INavbar) => {
   const [currentNav, setCurrentNav] = useState<ISubsidiaryNavs>(
     WebSubsidiaryNavs.find((nav) => nav.title === "Spectrum Fibre")!
   );
+
+  const [showMediaDropdown, setShowMediaDropdown] = useState(false);
 
   useEffect(() => {
     let clickHandler = (e: any) => {
@@ -339,40 +338,66 @@ const Navbar = ({ pageName }: INavbar) => {
           </div>
 
           <div className="flex gap-16  w-5/12 items-center justify-end  border-red-500 relative">
-            <div className="flex gap-12  ">
+            <div className="flex gap-2  ">
               <CustomNavButton2
-                href="/business"
-                title="Business"
-                active={pageName === "Business"}
+                href="/"
+                title="Home"
+                active={pageName === "Spectrum Fibre"}
               />
 
               <CustomNavButton2
-                title="Our Portfolio"
-                active={false}
-                onClickHandler={() =>
-                  setShowOurPortfolioDropdown((prev) => !prev)
-                }
-                onMouseEnterHandler={() => setShowOurPortfolioDropdown(true)}
-                onMouseLeaveHandler={() => setShowOurPortfolioDropdown(false)}
+                href="/#solutions"
+                title="Product & Services"
+                active={pageName === "Product & Services"}
               />
-              <CustomNavButton2
-                href="/about"
-                title="About"
-                active={pageName === "About"}
-              />
+
+              <button
+                className={`${
+                  pageName === "Media"
+                    ? "border-[#AB2346] border-b-[4px]"
+                    : "border-b-[4px] border-transparent"
+                } 
+                 relative px-2 text-base`}
+                onMouseEnter={() => setShowMediaDropdown(true)}
+                onMouseLeave={() => setShowMediaDropdown(false)}
+              >
+                <h1 className="font-medium text-base whitespace-nowrap hover:text-secondary">
+                  Media
+                </h1>
+
+                {showMediaDropdown && (
+                  <div className="bg-white absolute h-fit w-fit text-primary px-2 py-1.5 rounded-md -ml-[25%] top-10">
+                    <ul className="flex flex-col items-start justify-start font-medium  gap-1.5">
+                      <li className="hover:text-secondary">
+                        <Link href="/">Media</Link>
+                      </li>
+                      <li className="hover:text-secondary">
+                        <Link href="/">Newsletter</Link>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </button>
+
               <CustomNavButton2
                 href="/career"
-                title="Career"
+                title="Careers"
                 active={pageName === "Career"}
               />
+
+              <CustomNavButton2
+                href="/contact-us"
+                title="Contact Us"
+                active={pageName === "Contact Us"}
+              />
             </div>
-            <button onClick={() => setOpenDesktopSiteMenu((prev) => !prev)}>
+            {/* <button onClick={() => setOpenDesktopSiteMenu((prev) => !prev)}>
               <img
                 src={"/assets/icons/home-2.svg"}
                 className="h-10  fill-primary"
                 alt="menu icon"
               />
-            </button>
+            </button> */}
             {showOurPortfolioDropdown && (
               <div
                 className="absolute w-[90%]  -left-10 h-20 border bg-white top-16 rounded-[17px] flex justify-center flex-col shadow"
@@ -481,34 +506,36 @@ const Navbar = ({ pageName }: INavbar) => {
             </div>
 
             <div className="px-6 flex flex-col gap-4">
-              <Link href="/business">
+              <Link href="/">
                 <h1
-                  className="text-[#1D365A] font-medium text-4xl"
+                  className="text-[#1D365A] font-medium text-3xl"
                   onClick={() => setOpenDesktopSiteMenu(false)}
                 >
-                  Business
+                  Home
                 </h1>
               </Link>
-              <Link href="/about">
+
+              <Link href="/solutions">
                 <h1
-                  className="text-[#1D365A] font-medium text-4xl"
+                  className="text-[#1D365A] font-medium text-3xl"
                   onClick={() => setOpenDesktopSiteMenu(false)}
                 >
-                  About
+                  Product & Services
                 </h1>
               </Link>
+
               <Link href="/career">
                 <h1
-                  className="text-[#1D365A] font-medium text-4xl"
+                  className="text-[#1D365A] font-medium text-3xl"
                   onClick={() => setOpenDesktopSiteMenu(false)}
                 >
-                  Career
+                  Careers
                 </h1>
               </Link>
 
               <div className="text-[#1D365A]  h-20">
                 <button
-                  className=" font-medium text-4xl  text-left flex items-center gap-2"
+                  className=" font-medium text-3xl  text-left flex items-center gap-2"
                   onClick={() => setOpenMediaDropdown((prev) => !prev)}
                 >
                   Media
@@ -547,7 +574,10 @@ const Navbar = ({ pageName }: INavbar) => {
                   <img src={"/assets/icons/menu-nav/isg.svg"} />
                 </button>
                 <button className="col">
-                  <img src={"/assets/icons/menu-nav/eagric.svg"} />
+                  <img
+                    src={"/assets/icons/menu-nav/agro.png"}
+                    className="h-12"
+                  />
                 </button>
               </div>
             </div>
@@ -617,7 +647,7 @@ const Navbar = ({ pageName }: INavbar) => {
                   <CustomNavButton2
                     href="/business"
                     title="Business"
-                    active={pageName === "Business"}
+                    active={pageName === "Product & Services"}
                     textColorWhite={false}
                   />
                   <CustomNavButton2

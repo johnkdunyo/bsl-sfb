@@ -33,9 +33,7 @@ const SingleSection = ({
           ref={container}
         >
           <div className=" text-[#234222] px-4 flex flex-col gap-6">
-            <h1 className="font-bold text-4xl leading-normal text-[#0071BD]">
-              {title}
-            </h1>
+            <h1 className="font-semibold text-4xl  text-[#0071BD]">{title}</h1>
             <div className="text-xl leading-normal ">
               {description.map((item, _x) => (
                 <div className="flex items-start  gap-3 my-1" key={_x}>
@@ -58,10 +56,10 @@ const SingleSection = ({
           } `}
         >
           <div className="flex flex-col gap-4 justify-center  h-full  px-16 ">
-            <h1 className="font-bold text-6xl text-[#0071BD] leading-[4.5rem]">
+            <h1 className="font-semibold text-5xl text-[#0071BD] leading-[3.4rem]">
               {title}
             </h1>
-            <div className="text-xl leading-normal">
+            <div className="text-lg leading-normal">
               {description.map((item, _x) => (
                 <div className="flex   gap-3 items-start my-2" key={_x}>
                   <div className="mt-1">
@@ -76,7 +74,7 @@ const SingleSection = ({
         <div className="w-full ">
           <img
             src={imgURL}
-            className="rounded-[80px] object-cover h-[35rem]  w-full   "
+            className="rounded-[80px] object-cover h-[25rem]  w-full   "
           />
         </div>
       </div>
@@ -86,55 +84,75 @@ const SingleSection = ({
 
 const AreaOfExpertiseSection = () => {
   return (
-    <section className="py-20  bg-white">
+    <section className="py-20  bg-white" id="solutions">
       <div className="custom-container">
         <div>
           <Animate.FadeUp className="text-[2.9rem] md:text-8xl leading-[4rem] md:leading-[7rem] text-transparent bg-clip-text font-bold bg-gradient-to-l from-[#306FB7] to-[#2A4125] px-6 sm:px-0 ">
-            Our Area of Expertise
+            Our Services
           </Animate.FadeUp>
         </div>
 
         <div className="mt-20 flex flex-col justify-between gap-12 md:gap-20 ">
           <SingleSection
-            title="Dedicated Internet"
-            imgURL="https://res.cloudinary.com/diek2uivi/image/upload/v1689604341/bsl-website/spectrum-fibre/dedicated-internet_yyawej.jpg"
+            title="WAN and Leased Line Services"
+            imgURL="https://res.cloudinary.com/diek2uivi/image/upload/v1697883086/bsl-website/spectrum-fibre/SFC_4_xbrcye.png"
             description={[
-              "Suitable for ISPs, schools, research institutions, banks, government organizations, and any other institution that requires high performance internet.",
+              "Enjoy dedicated, secure point-to-point and wide area network connections for all bandwidth needs.",
             ]}
           />
 
           <SingleSection
-            title="Backhaul Solutions"
-            imgURL="https://res.cloudinary.com/diek2uivi/image/upload/v1689604342/bsl-website/spectrum-fibre/backhaul_uwau6f.jpg"
+            title="Cross-Border Connectivity"
+            imgURL="https://res.cloudinary.com/diek2uivi/image/upload/v1697883527/bsl-website/spectrum-fibre/cros-border_aflfxu.png"
             txtPosition={"right"}
             description={[
-              "Suitable for ISPs and Telecom service providers such as GLO, Prodata, etc.",
-              "Support topologies such as point-to-point, point-to-multipoint, and multipoint-to-multipoint Managed Wide Area Networks (WAN)",
-              "Suitable for organizations that want to connect several locations over a large geographic area. E.g., Banks, Government Institutions, Retail chain of Shops, Insurance companies etc",
+              "Unlock new frontiers with Spectrum Fibre’s Cross-Border Connectivity. Seamlessly link West African nations and neighboring countries, facilitating efficient bulk data transfer",
             ]}
           />
           <SingleSection
-            title="Wavelength Solutions"
-            imgURL="https://res.cloudinary.com/diek2uivi/image/upload/v1689604343/bsl-website/spectrum-fibre/wavelength_azfc46.jpg"
+            title="Metro and Backbone Services"
+            imgURL="https://res.cloudinary.com/diek2uivi/image/upload/v1697883527/bsl-website/spectrum-fibre/metro_zt5jvy.png"
             description={[
-              "Delivered over our state-of-the-art Dense Wave Division Multiplexing (DWDM) network",
-              "An ideal solution for data center backup and recovery sites, research institutions, and wholesale internet carriers",
+              "Elevate your network with Spectrum Fibre’s Metro and Backbone Services, delivering seamless, high-speed connectivity within urban areas and across regions.",
+            ]}
+          />
+          <SingleSection
+            title="Internet Services"
+            imgURL="https://res.cloudinary.com/diek2uivi/image/upload/v1697883525/bsl-website/spectrum-fibre/internet_m94vn9.png"
+            txtPosition={"right"}
+            description={[
+              "Experience lightning-fast internet services, backed by a robust fiber-optic network, ensure seamless connectivity for homes, businesses, and government entities.",
             ]}
           />
           <SingleSection
             title="Dark Fiber"
-            imgURL="https://res.cloudinary.com/diek2uivi/image/upload/v1689604341/bsl-website/spectrum-fibre/dark-fibre_munhyi.jpg"
-            txtPosition={"right"}
+            imgURL="https://res.cloudinary.com/diek2uivi/image/upload/v1697883526/bsl-website/spectrum-fibre/dark-fibre_xngm9z.png"
             description={[
-              "Suitable for telcos, and wholesale internet carriers",
+              "Take control of your network infrastructure with Spectrum Fibre’s Dark Fiber solutions. Enjoy dedicated, flexible fiber-optic connectivity, and round-the-clock technical support.",
             ]}
           />
           <SingleSection
-            title="Software-Defined Wide Area Network"
+            title="SD-WAN Services"
+            imgURL="https://res.cloudinary.com/diek2uivi/image/upload/v1697883526/bsl-website/spectrum-fibre/sd-wan_o0elb3.png"
+            description={[
+              "Elevate your network’s performance and flexibility with Spectrum Fibre’s tailored SD-WAN Solutions.",
+            ]}
+            txtPosition={"right"}
+          />
+          <SingleSection
+            title="Open Access Data Centers"
+            imgURL="https://res.cloudinary.com/diek2uivi/image/upload/v1697883527/bsl-website/spectrum-fibre/open-acceess_xbu4iq.png"
+            description={[
+              "Unlock the power of secure, reliable, and efficient IT infrastructure with Spectrum Fibre’s Data Center Colocation Services",
+            ]}
+          />
+          <SingleSection
+            title="Customized Connectivity Services"
             imgURL="https://res.cloudinary.com/diek2uivi/image/upload/v1689604343/bsl-website/spectrum-fibre/software_cwjqib.jpg"
             description={[
-              "Suitable for telcos, and wholesale internet carriers",
+              "Experience unparalleled, tailored connectivity with Spectrum Fibre’s Customized Connectivity Services, leveraging a variety of mediums such as Fiber, VSAT, Microwave, and more to deliver the perfect solution for your unique requirements.",
             ]}
+            txtPosition={"right"}
           />
         </div>
       </div>

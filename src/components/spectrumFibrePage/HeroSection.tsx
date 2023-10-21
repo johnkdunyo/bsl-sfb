@@ -18,13 +18,14 @@ const HeroSection = () => {
         <div className="h-[10rem] md:h-[1rem]"></div>
         <Animate.FadeUp className=" w-full  flex flex-col justify-center items-center md:items-start  gap-10   max-w-4xl">
           <h1 className="font-extralight text-[1.9rem] md:text-7xl md:leading-[5rem] md:tracking-wider ">
-            A Telecommunication company with the{" "}
+            Enabling{" "}
             <span className="font-bold text-[#35BC56]">
-              lightening-fast connectivity
-            </span>
+              seamless connectivity
+            </span>{" "}
+            everywhere we go.
           </h1>
           <p className="text-lg md:text-xl tracking-wider   md:mt-8 font-normal">
-            We are committed to meet your business needs at the speed of light.
+            Telecommunication company with the lightening-fast connectivity.
           </p>
         </Animate.FadeUp>
 

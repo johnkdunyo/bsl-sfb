@@ -9,12 +9,14 @@ const SingleComponent = ({
   description: string;
 }) => {
   return (
-    <Animate.ScaleIn className="w-full border border-[#306FB7] px-8 md:px-10 rounded-[50px] h-[25rem] md:h-[30rem] flex justify-start flex-col text-left py-14 md:py-16 gap-14">
-      <div className=" h-[30%]">
-        <h1 className="text-[#0071BD] font-bold text-3xl ">{title}</h1>
+    <Animate.ScaleIn className="w-full border border-[#306FB7] px-6 lg:px-8 rounded-[40px] h-full  flex justify-start flex-col text-left py-10 lg:py-12 gap-10">
+      <div className="   w-full h-[8rem] flex items-center">
+        <h1 className="text-[#0071BD] font-bold text-3xl  md:text-center">
+          {title}
+        </h1>
       </div>
-      <div className="paragraphText1 text-[#234222]  h-full flex justify-start items-start">
-        <div>{description}</div>
+      <div className="paragraphText1 text-[#234222]  h-full flex justify-start items-start w-full ">
+        <div className="lg:text-center">{description}</div>
       </div>
     </Animate.ScaleIn>
   );
@@ -23,12 +25,12 @@ const SingleComponent = ({
 const WeInnovateSection = () => {
   return (
     <section className="py-20 bg-white">
-      <div className="custom-container">
+      <div className="custom-container flex flex-col gap-10 lg:gap-24">
         <Animate.FadeUp className="text-[#0071BD] text-4xl md:text-7xl font-bold leading-snug md:text-center">
           We innovate to empower through;
         </Animate.FadeUp>
 
-        <div className="flex flex-col md:flex-row mt-20 gap-14 md:gap-20">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-16">
           <SingleComponent
             title="Ghanaian Ownership and expertise"
             description="We are a proudly independent Ghanaian company. A demonstration of

@@ -3,7 +3,22 @@ import { Animate } from "../animations/ScrollAnimator";
 
 const PartnerShipSection = () => {
   return (
-    <section className="flex flex-col justify-between ">
+    <section className="flex flex-col justify-between bg-white" id="about">
+      <div className="custom-container py-20 flex flex-col gap-4">
+        <h1 className="text-[#0071BD]  headerText2 text-center">Who We Are</h1>
+        <p className="text-[#070808]">
+          Spectrum Fibre Company Limited (SFL) is a special purpose vehicle
+          established by Broadspectrum Limited and the Ghana Infrastructure
+          Investment Fund (GIIF) to interconnect all regions in Ghana with
+          ultra-modern high-capacity fibre infrastructure to meet the country’s
+          connectivity needs for now and the future.
+          <br />
+          <br />
+          Spectrum Fibre is committed to delivering clients with reliable,
+          seamless and secure connectivity throughout Ghana, within the West
+          African sub-region and ultimately the rest of the world.
+        </p>
+      </div>
       <div className="w-fulll bg-gradient-to-r from-[#17449A] to-[#0071BD] h-[30rem] md:h-[40rem]">
         <div className="md:hidden">
           <div className=" custom-container mt-14 ">
