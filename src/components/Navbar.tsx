@@ -515,7 +515,7 @@ const Navbar = ({ pageName }: INavbar) => {
                 </h1>
               </Link>
 
-              <Link href="/solutions">
+              <Link href="/#solutions">
                 <h1
                   className="text-[#1D365A] font-medium text-3xl"
                   onClick={() => setOpenDesktopSiteMenu(false)}
