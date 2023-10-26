@@ -150,7 +150,10 @@ const Footer = () => {
               href={siteMetaData["bsl-twitter"]}
               name="twitter"
             />
-            <SocialMediaButtons href="/" name="facebook" />
+            <SocialMediaButtons
+              href="https://www.facebook.com/broadspectrumgroup/"
+              name="facebook"
+            />
           </div>
         </div>
 
@@ -300,7 +303,10 @@ const Footer = () => {
                       href={siteMetaData["bsl-twitter"]}
                       name="twitter"
                     />
-                    <SocialMediaButtons href="/" name="facebook" />
+                    <SocialMediaButtons
+                      href="https://www.facebook.com/broadspectrumgroup/"
+                      name="facebook"
+                    />
                   </div>
                 </div>
               </Animate.FadeUp>

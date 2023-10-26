@@ -33,9 +33,7 @@ const WeInnovateSection = () => {
         <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-16">
           <SingleComponent
             title="Ghanaian Ownership and expertise"
-            description="We are a proudly independent Ghanaian company. A demonstration of
-        Public Private Partnership (PPP) at work in Ghana to transform the lives
-        of Ghanaians."
+            description="We are a proudly independent Ghanaian company. A demonstration of Public Private-Partnership (PPP) at work in Ghana to transform the lives of Ghanaians."
           />
           <SingleComponent
             title="A Unique network"
